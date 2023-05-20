@@ -18,8 +18,8 @@ class CycleService {
         })
     }
 
-    createCycle() {
-        return this.api.get(`cycle/create`, cycleData)
+    createCycle(cycleData) {
+        return this.api.post(`/create`, cycleData)
     }
 }
 

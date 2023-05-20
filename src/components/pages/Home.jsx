@@ -1,5 +1,4 @@
 import React from 'react'
-import CalendarTable from '../layout/Calendar'
 import Login from './Login'
 import Signup from './Signup'
 import CreateCycle from './CreateCycle'
@@ -8,10 +7,10 @@ const Home = () => {
 
 
     return (
-        // <CalendarTable />
+        <h1>Home</h1>
         // <Login />
         // <Signup />
-        <CreateCycle />
+        // <CreateCycle />
     )
 }
 

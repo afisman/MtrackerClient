@@ -11,7 +11,7 @@ const Navigation = () => {
     }
 
     return (
-        <Navbar expand="lg" bg="light">
+        <Navbar expand="lg" variant="dark">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 

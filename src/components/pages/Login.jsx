@@ -29,7 +29,7 @@ const Login = () => {
             .then(({ data }) => {
                 storeToken(data.authToken)
                 authenticateUser()
-                navigate('/')
+                navigate('/cycle/create')
             })
             .catch(err => console.log(err))
     }
