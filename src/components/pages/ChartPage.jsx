@@ -5,6 +5,8 @@ const ChartPage = () => {
     const { user } = useContext(AuthContext)
     const [userCycles, setUserCycles] = useState([])
 
+    console.log(user)
+
     useEffect(() => {
         setUserCycles(user.cycles)
     }, [])

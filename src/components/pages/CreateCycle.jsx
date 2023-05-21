@@ -8,14 +8,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 const CreateCycle = () => {
-    // const [cycleData, setCycleData] = useState({
-    //     startDate: new Date(),
-    //     endDate: new Date(),
-    //     flow: 0,
-    //     mood: 0,
-    //     pain: [],
-    //     periodDuration: 0
-    // })
 
     const [painChecked, setPainChecked] = useState([])
     const [flowChecked, setFlowChecked] = useState(1)

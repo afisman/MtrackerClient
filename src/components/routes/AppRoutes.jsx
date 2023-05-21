@@ -4,6 +4,7 @@ import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import CreateCycle from '../pages/CreateCycle'
 import PrivateRoute from './PrivateRoutes'
+import ChartPage from '../pages/ChartPage'
 
 
 const AppRoutes = () => {
@@ -12,6 +13,9 @@ const AppRoutes = () => {
             <Routes>
                 <Route path='/cycle/create' element={<PrivateRoute />}>
                     <Route path='' element={<CreateCycle />} />
+                </Route>
+                <Route path='/user/:user_id' element={<PrivateRoute />}>
+                    <Route path='' element={<ChartPage />} />
                 </Route>
                 {/* <Route path='/cycle/create' element={<CreateCycle />} /> */}
                 <Route path='/signup' element={<Signup />} />

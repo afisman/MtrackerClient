@@ -27,6 +27,7 @@ const Login = () => {
         authService
             .login(loginData)
             .then(({ data }) => {
+                console.log(data)
                 storeToken(data.authToken)
                 authenticateUser()
                 navigate('/cycle/create')
