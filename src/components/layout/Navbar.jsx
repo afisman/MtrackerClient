@@ -11,7 +11,7 @@ const Navigation = () => {
     }
 
     return (
-        <Navbar expand="lg" variant="dark">
+        <Navbar expand="lg" bg="dark" variant='dark'>
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -28,6 +28,10 @@ const Navigation = () => {
                                     </Link>
                                 </> :
                                 <>
+                                    <Link to={`/user/${user._id}`}>
+                                        <Nav.Link as="span">Profile</Nav.Link>
+
+                                    </Link>
                                     <Nav.Link as="span" onClick={logout}>Log out</Nav.Link>
                                 </>
                         }
