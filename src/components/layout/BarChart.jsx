@@ -48,6 +48,14 @@ const BarChart = ({ dateArr, moodArr, flowArr }) => {
                 options={{
                     responsive: true,
                     mantainAspectRatio: false,
+                    scale: {
+                        ticks: {
+                            precision: 0,
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
 
                 }}
             />

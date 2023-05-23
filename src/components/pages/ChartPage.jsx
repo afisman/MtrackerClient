@@ -11,6 +11,7 @@ const ChartPage = () => {
     const [flowArr, setFlowArr] = useState([])
     const [moodArr, setMoodArray] = useState([])
     const [dateArr, setDateArr] = useState([])
+    const [periodDurationArr, setPeriodDurationArr] = useState([])
     const { user_id } = useParams()
 
     const padTo2Digits = (num) => {
@@ -32,9 +33,7 @@ const ChartPage = () => {
         userService
             .getUser(user_id)
             .then(user => {
-                console.log(typeof user.data.cycles[0].startDate)
                 const sortedCycles = user.data.cycles.sort((a, b) => Date.parse(a.startDate) - Date.parse(b.startDate))
-                console.log(sortedCycles)
                 setUserCycles(sortedCycles)
             })
             .catch(err => {
@@ -50,9 +49,11 @@ const ChartPage = () => {
         const fArr = userCycles.map((data) => data.flow)
         const mArr = userCycles.map((data) => data.mood)
         const dArr = userCycles.map((data) => getDayAndMonth(data.startDate))
+        const PDArr = userCycles.map((data) => data.periodDuration)
         setFlowArr(fArr)
         setMoodArray(mArr)
         setDateArr(dArr)
+        setPeriodDurationArr(PDArr)
 
     }, [userCycles])
 
@@ -61,7 +62,10 @@ const ChartPage = () => {
             <div>ChartPage</div>
             {
                 userCycles ?
-                    <BarChart dateArr={dateArr} moodArr={moodArr} flowArr={flowArr} />
+                    <>
+                        <BarChart dateArr={dateArr} moodArr={moodArr} flowArr={flowArr} />
+                        <LineChart dateArr={dateArr} periodDurationArr={periodDurationArr} />
+                    </>
                     :
                     <Loader />
 
