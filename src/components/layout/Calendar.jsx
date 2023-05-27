@@ -18,7 +18,7 @@ const CalendarTable = ({ receiveDates }) => {
 
     return (
         <>
-            <Calendar showWeekNumbers onChange={onChange} value={date} selectRange={true} />
+            <Calendar onChange={onChange} value={date} selectRange={true} />
         </>
     )
 }

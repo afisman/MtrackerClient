@@ -6,6 +6,8 @@ import BarChart from '../layout/BarChart'
 import LineChart from '../layout/LineChart'
 import Loader from '../layout/Loader'
 import PolarChart from '../layout/PolarChart'
+import './ChartPage.css'
+
 const ChartPage = () => {
     const { user } = useContext(AuthContext)
     const [userCycles, setUserCycles] = useState([])
@@ -87,14 +89,14 @@ const ChartPage = () => {
 
     return (
         <>
-            <div>ChartPage</div>
+            <h1 className='mt-5 mb-5'>Analytics</h1>
             {
-                userCycles ?
-                    <>
+                userCycles && user ?
+                    <div className='charts'>
                         <BarChart dateArr={dateArr} moodArr={moodArr} flowArr={flowArr} />
                         <LineChart dateArr={dateArr} periodDurationArr={periodDurationArr} />
                         <PolarChart dateArr={dateArr} painPercentages={painPercentages} />
-                    </>
+                    </div>
                     :
                     <Loader />
 

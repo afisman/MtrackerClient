@@ -1,0 +1,11 @@
+.polarChart {
+    width: 700px;
+    padding: 50px;
+}
+
+@media only screen and (max-width: 760px) {
+    .polarChart {
+        width: 300px;
+        padding: 10px;
+    }
+}

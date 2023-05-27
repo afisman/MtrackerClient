@@ -1,13 +1,24 @@
 import { Nav, Navbar, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/auth.context'
 import { useContext } from 'react'
+import { MessageContext } from '../../context/message.context'
 
 
 const Navigation = () => {
+
+    const navigate = useNavigate()
+
+    const { setShowMessage } = useContext(MessageContext)
+
     const { user, logoutUser } = useContext(AuthContext)
     const logout = () => {
+        setShowMessage({
+            show: true,
+            title: 'Until next time', text: 'your session was closed successfully'
+        })
         logoutUser()
+        navigate('/')
     }
 
     return (
@@ -29,10 +40,14 @@ const Navigation = () => {
                                 </> :
                                 <>
                                     <Link to={`/user/${user._id}`}>
-                                        <Nav.Link as="span">Profile</Nav.Link>
-
+                                        <Nav.Link as="span">Analytics</Nav.Link>
                                     </Link>
-                                    <Nav.Link as="span" onClick={logout}>Log out</Nav.Link>
+                                    <Link to='/cycle/create'>
+                                        <Nav.Link as="span">Create</Nav.Link>
+                                    </Link>
+                                    <Link to='/'>
+                                        <Nav.Link as="span" onClick={logout}>Log out</Nav.Link>
+                                    </Link>
                                 </>
                         }
 

@@ -4,12 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProviderWrapper } from './context/auth.context';
 import App from './App'
+import { MessageProviderWrapper } from './context/message.context';
 
 ReactDOM.render(
     <React.StrictMode>
         <Router>
             <AuthProviderWrapper>
-                <App />
+                <MessageProviderWrapper>
+                    <App />
+                </MessageProviderWrapper>
             </AuthProviderWrapper>
         </Router>
     </React.StrictMode>,

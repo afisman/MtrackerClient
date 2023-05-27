@@ -1,0 +1,15 @@
+.img-fluid {
+    width: 100px;
+}
+
+.flowGroup,
+.moodGroup,
+.painGroup {
+    margin: 20px 0 20px 0;
+}
+
+.button-title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+}

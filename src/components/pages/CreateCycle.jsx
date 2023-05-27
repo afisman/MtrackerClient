@@ -4,6 +4,7 @@ import cycleService from '../../services/cycle.services'
 import CalendarTable from '../layout/Calendar'
 import Checkbox from '../layout/Checkbox'
 import { useNavigate } from 'react-router-dom'
+import './CreateCycle.css'
 
 
 
@@ -39,44 +40,6 @@ const CreateCycle = () => {
         setPeriodDuration(fromStartDate)
     }
 
-    // useEffect(() => {
-    //     setCycleData({
-    //         ...cycleData, pain: painChecked
-    //     })
-    // }, [painChecked])
-
-    // useEffect(() => {
-    //     setCycleData({
-    //         ...cycleData, mood: moodChecked
-    //     })
-    // }, [moodChecked])
-
-    // useEffect(() => {
-    //     setCycleData({
-    //         ...cycleData, flow: flowChecked
-    //     })
-    // }, [flowChecked])
-
-    // useEffect(() => {
-    //     console.log(startDate)
-    //     setCycleData(
-    //         { ...cycleData, startDate: new Date(startDate) }
-    //     )
-    // }, [startDate])
-
-    // useEffect(() => {
-    //     console.log(endDate)
-    //     setCycleData({
-    //         ...cycleData, endDate: new Date(endDate)
-    //     })
-    // }, [endDate])
-
-    // useEffect(() => {
-    //     setCycleData({
-    //         ...cycleData, periodDuration
-    //     })
-    // }, [periodDuration])
-
     const handleSubmit = e => {
         e.preventDefault()
 
@@ -89,13 +52,14 @@ const CreateCycle = () => {
     }
 
     return (
-        <Container>
-            <Form onSubmit={handleSubmit}>
-                <CalendarTable receiveDates={receiveDates} />
+        <Container className='ccFormContainer'>
+            <Form onSubmit={handleSubmit} className='createCycleForm'>
+                <CalendarTable receiveDates={receiveDates} className='mt-5 mb-5' />
                 <Checkbox
                     receivePain={receivePain} painChecked={painChecked}
                     receiveMood={receiveMood} moodChecked={moodChecked}
                     receiveFlow={receiveFlow} flowChecked={flowChecked}
+                    className='mt-5 mb-5'
                 />
                 <div className='d-grid form-button'>
                     <Button id='create-button' variant='dark' type='submit'>Create cycle</Button>

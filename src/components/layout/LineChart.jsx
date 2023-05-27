@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js'
 import Loader from './Loader'
+import './LineChart.css'
+import { Form } from 'react-bootstrap'
 
 ChartJS.register(
     CategoryScale,
@@ -13,12 +15,13 @@ ChartJS.register(
 )
 
 const LineChart = ({ dateArr, periodDurationArr }) => {
+    const [range, setRange] = useState(3)
     const userData = {
-        labels: dateArr,
+        labels: dateArr.length < range ? dateArr : dateArr.slice(0, range),
         datasets: [
             {
                 label: "Period duration",
-                data: periodDurationArr,
+                data: periodDurationArr.length < range ? periodDurationArr : periodDurationArr.slice(0, range),
                 backgroundColor:
                     "rgba(75,192,192,1)",
 
@@ -28,27 +31,41 @@ const LineChart = ({ dateArr, periodDurationArr }) => {
 
         ]
     }
+
+    const handleChange = (e) => {
+        const { value } = e.target
+
+        setRange(value)
+    }
     return (
-        <div style={{ width: 700, padding: '100px' }}>
-            {
-                <Line
-                    data={userData}
-                    options={{
-                        responsive: true,
-                        mantainAspectRatio: false,
-                        scale: {
-                            ticks: {
-                                precision: 0,
+        <>
+            <div className='lineChart'>
+                {
+                    <Line
+                        data={userData}
+                        options={{
+                            responsive: true,
+                            mantainAspectRatio: false,
+                            scale: {
+                                ticks: {
+                                    precision: 0,
 
-                            }
+                                }
 
-                        },
-                        scales: { y: { min: 0 } }
+                            },
+                            scales: { y: { min: 0 } }
 
-                    }}
-                />
-            }
-        </div>
+                        }}
+                    />
+                }
+            </div>
+            <Form.Select className='form-input line-form-input' aria-label="Default select example"
+                value={range} name='range' onChange={handleChange}>
+                <option value={3}>Last 3 cycles</option>
+                <option value={6}>Last 6 cycles</option>
+                <option value={12}>Last 12 cycles</option>
+            </Form.Select>
+        </>
     )
 }
 

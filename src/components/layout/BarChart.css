@@ -1,0 +1,15 @@
+.barChart {
+    width: 700px;
+    padding: 50px;
+}
+
+.barChart-form-input {
+    width: 200px;
+}
+
+@media only screen and (max-width: 760px) {
+    .barChart {
+        width: 300px;
+        padding: 10px;
+    }
+}

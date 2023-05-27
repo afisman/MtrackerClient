@@ -1,0 +1,21 @@
+.createCycleForm {
+    margin: 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-button {
+    margin-top: 20px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 200px;
+}

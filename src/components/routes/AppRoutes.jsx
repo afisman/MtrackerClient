@@ -14,9 +14,7 @@ const AppRoutes = () => {
                 <Route path='/cycle/create' element={<PrivateRoute />}>
                     <Route path='' element={<CreateCycle />} />
                 </Route>
-                <Route path='/user/:user_id' element={<PrivateRoute />}>
-                    <Route path='' element={<ChartPage />} />
-                </Route>
+                <Route path='/user/:user_id' element={<ChartPage />} />
                 {/* <Route path='/cycle/create' element={<CreateCycle />} /> */}
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/login' element={<Login />} />
