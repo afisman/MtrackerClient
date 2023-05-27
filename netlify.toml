@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "https://mtracker0.onrender.com/api"
+  to = "https://mtracker0.netlify.app"
   status = 200
