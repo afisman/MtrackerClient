@@ -18,11 +18,11 @@ const BarChart = ({ dateArr, moodArr, flowArr }) => {
     const [range, setRange] = useState(3)
 
     const userData = {
-        labels: dateArr.length < range ? dateArr : dateArr.slice(dateArr.length - range - 1),
+        labels: dateArr.length < range ? dateArr : dateArr.slice(dateArr.length - range),
         datasets: [
             {
                 label: "Mood",
-                data: moodArr.length < range ? moodArr : moodArr.slice(moodArr.length - range - 1),
+                data: moodArr.length < range ? moodArr : moodArr.slice(moodArr.length - range),
                 backgroundColor: 'aqua',
                 borderColor: 'black',
                 borderWidth: 1,
@@ -31,7 +31,7 @@ const BarChart = ({ dateArr, moodArr, flowArr }) => {
             ,
             {
                 label: "Flow",
-                data: flowArr.length < range ? flowArr : flowArr.slice(flowArr.length - range - 1),
+                data: flowArr.length < range ? flowArr : flowArr.slice(flowArr.length - range),
                 backgroundColor: 'green',
                 borderColor: 'black',
                 borderWidth: 1,

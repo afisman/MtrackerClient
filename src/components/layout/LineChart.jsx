@@ -17,11 +17,11 @@ ChartJS.register(
 const LineChart = ({ dateArr, periodDurationArr }) => {
     const [range, setRange] = useState(3)
     const userData = {
-        labels: dateArr.length < range ? dateArr : dateArr.slice(dateArr.length - range - 1),
+        labels: dateArr.length < range ? dateArr : dateArr.slice(dateArr.length - range),
         datasets: [
             {
                 label: "Period duration",
-                data: periodDurationArr.length < range ? periodDurationArr : periodDurationArr.slice(periodDurationArr.length - range - 1),
+                data: periodDurationArr.length < range ? periodDurationArr : periodDurationArr.slice(periodDurationArr.length - range),
                 backgroundColor:
                     "rgba(75,192,192,1)",
 
