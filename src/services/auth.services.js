@@ -5,7 +5,7 @@ class AuthService {
     constructor() {
 
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/auth`
+            baseURL: process.env.REACT_APP_API_URL
         })
 
         this.api.interceptors.request.use((config) => {
@@ -21,15 +21,15 @@ class AuthService {
     }
 
     signup(userData) {
-        return this.api.post('/signup', userData)
+        return this.api.post('/auth/signup', userData)
     }
 
     login(userData) {
-        return this.api.post('/login', userData)
+        return this.api.post('/auth/login', userData)
     }
 
     verify = token => {
-        return this.api.get('/verify', { headers: { Authorization: `Bearer ${token}` } })
+        return this.api.get('/auth/verify', { headers: { Authorization: `Bearer ${token}` } })
     }
 
 }
