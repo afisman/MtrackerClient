@@ -5,7 +5,7 @@ class AuthService {
     constructor() {
 
         this.api = axios.create({
-            baseURL: `http://localhost:5005/api/auth`
+            baseURL: `${process.env.REACT_APP_API_URL}/auth`
         })
 
         this.api.interceptors.request.use((config) => {

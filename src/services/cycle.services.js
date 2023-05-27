@@ -3,7 +3,7 @@ import axios from 'axios';
 class CycleService {
     constructor() {
         this.api = axios.create({
-            baseURL: `http://localhost:5005/api/cycle`
+            baseURL: `${process.env.REACT_APP_API_URL}/cycle`
         })
 
         this.api.interceptors.request.use((config) => {
