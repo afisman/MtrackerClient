@@ -7,7 +7,7 @@ mood and flow amount per cycle, as well as recurrence of different pains in cycl
 
 Installation
 Clone/ Download the  client repo, create a .env file where you paste the following variable 
-REACT_APP_API_URL=http://localhost:5005/api, in deployment this variable will be changed to the url 
+REACT_APP_API_URL=http://localhost:5005/api if wanting to run locally, in deployment this variable will be changed to the url 
 where you deploy the API.
 Then run the following commands
 
