@@ -19,7 +19,10 @@ const CalendarTable = ({ receiveDates }) => {
 
     return (
         <>
-            <Calendar onChange={onChange} value={date} selectRange={true} className='calendar' />
+            <div className='calendar'>
+
+                <Calendar onChange={onChange} value={date} selectRange={true} />
+            </div>
         </>
     )
 }
