@@ -1,0 +1,6 @@
+@media only screen and (max-width: 760px) {
+    .calendar {
+        width: 300px;
+        padding: 10px;
+    }
+}
